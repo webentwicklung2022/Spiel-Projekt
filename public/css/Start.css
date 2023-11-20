@@ -10,11 +10,17 @@ h1{
     font-size: 300%;
 }
 
-body, html {
-    height: 100%;
-    width: 100%;
-}
+body{
 
+    height: 100vh;
+    width: 100vw;
+
+
+    background: radial-gradient(ellipse at bottom, #156b7a 0%, #601818 100%);
+
+    background-image: linear-gradient(to top, #c79081 0%, #dfa579 100%);
+
+}
 #Spiele {
     /*
     background-color: aqua;
@@ -34,8 +40,11 @@ body, html {
     margin: 1%;
 
     margin-top: 5%;
+/*
+    border: 1px solid;*/
 
-    border: 1px solid;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px rgba(255, 255, 255, 0.175);
 
     height: 70%;
     width: 30%;
@@ -44,20 +53,20 @@ body, html {
     overflow: hidden;
     position: relative;
     cursor: pointer;
+
+
 }
 
 
-#CreatedBy{
-    position: absolute;
-    bottom: 2%;
-}
+
+
 
 
 
 .foto {
     height: 100%;
     width: 100%;
-    opacity: 0.7;
+    opacity: 1;
     /*overflow: visible;*/
     position: absolute;
     top: 0;
@@ -76,13 +85,18 @@ body, html {
     position: absolute;
     z-index: 100;
     text-align: center;
-    color: white;
     height: 100%;
     width: 100%;
+    color: white;
 }
 
 .text{
     position: absolute;
     bottom: 2%;
+    color: white;
+}
+
+h1{
+    color: white;
 }
 
