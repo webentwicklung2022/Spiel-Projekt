@@ -70,7 +70,8 @@ nav li a:hover {
    box-sizing: border-box;
    overflow: hidden;
    perspective: 1000px;
-   
+   transition-duration: 500ms;
+   cursor: pointer;
    
  
  }
@@ -87,6 +88,8 @@ nav li a:hover {
     transform-style: preserve-3d;
    
 }
+
+
 .flipped{
    transform: rotateY(180deg); 
 }
@@ -110,6 +113,9 @@ nav li a:hover {
     font-weight: bolder;
     font-size: larger;
 }
+.vorne:hover{
+    background-color: #333333;
+}
 
 .hinten{
     display: flex;
@@ -120,4 +126,14 @@ nav li a:hover {
     color: #fff;
 }
 
+.still{
+    transform: rotateY(180deg);
+    
+    
+}
+
+.richtig{
+    box-shadow:  0 0 3px 3px greenyellow;
+    pointer-events: none;
+}
 

@@ -48,16 +48,30 @@ function einfuegen(){
 einfuegen();
 
 var ids = [];
+var innerBox = document.getElementsByClassName("innerBox");
+var karten = document.getElementsByClassName("karten");
+var v = document.getElementsByClassName("var"); 
+var body = document.body;
 
 function flip(id){
+
    
+       
+    
+
+   if(ids.length < 2){
     ids.push(id);
+   }else{
+    ids.length = 0;
+    ids.push(id);
+   }
+    
    
 
-    var innerBox = document.getElementsByClassName("innerBox");
-     var v = document.getElementsByClassName("var"); 
+    
+    
        fliped = v[id].value;
-       console.log(fliped);
+       
         if (fliped == "false"){
             innerBox[id].classList.add('flipped');  
             v[id].value = true;
@@ -65,9 +79,13 @@ function flip(id){
             innerBox[id].classList.remove('flipped');
             v[id].value = false;
         }
+
+       
           
         match(id);
-       
+      
+        
+    
 
    
 
@@ -81,19 +99,51 @@ function match(id){
 
        
         var index = document.getElementsByClassName("index"); 
-        gewonnen.push(index[id].value)
-
-        if(gewonnen[0] === gewonnen[1] && gewonnen.length == 2){
+        
+        gewonnen.push(index[id].value) 
+        if(gewonnen[0] === gewonnen[1] && gewonnen.length == 2 && ids[0] !== ids[1]){
+            gewonnen.length = 0;
+            innerBox[ids[0]].classList.add('still');
+            innerBox[ids[1]].classList.add('still');
+            setTimeout(function () {
+                karten[ids[0]].classList.add('richtig');
+                karten[ids[1]].classList.add('richtig');
+            }, 500);
+           
            return true;
-           gewonnen = [];
-        }else if(gewonnen.length == 2){
+          
+
+        } 
+        
+        if(gewonnen.length == 2 && gewonnen[0] !== gewonnen[1]){
+            gewonnen.length = 0;
+            setTimeout(function () {
+                innerBox[ids[0]].classList.remove('flipped');
+            innerBox[ids[1]].classList.remove('flipped');
+            }, 800);
+            
             return false;
-            gewonnen = [];
+            
+
         }
+
+        if(gewonnen.length > 1 && index[id].value == id){
+            gewonnen.length = 0;
+            setTimeout(function () {
+                innerBox[ids[0]].classList.remove('flipped');
+            innerBox[ids[1]].classList.remove('flipped');
+            }, 800);
+            return false;
+            
+
+        }
+        
+            
+        
  
      
        
-       console.log(gewonnen);
+       
   
 
 
@@ -103,6 +153,8 @@ function match(id){
 
 
 }
+
+
 
 
 
