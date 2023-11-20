@@ -12,7 +12,10 @@ h1{
 
 body{
 
+    /*Alt bzw. normal: 
     height: 100vh;
+    */
+    height: 90vh;
     width: 100vw;
 
 
@@ -100,3 +103,6 @@ h1{
     color: white;
 }
 
+.SpieleButton:hover{
+    scale: 1.1;
+}
