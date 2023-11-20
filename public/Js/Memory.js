@@ -61,7 +61,7 @@ function flip(id){
 
    if(ids.length < 2){
     ids.push(id);
-   }else{
+   }else {
     ids.length = 0;
     ids.push(id);
    }
@@ -118,8 +118,10 @@ function match(id){
         if(gewonnen.length == 2 && gewonnen[0] !== gewonnen[1]){
             gewonnen.length = 0;
             setTimeout(function () {
-                innerBox[ids[0]].classList.remove('flipped');
+            innerBox[ids[0]].classList.remove('flipped');
             innerBox[ids[1]].classList.remove('flipped');
+            v[ids[0]].value = false;
+            v[ids[1]].value = false;
             }, 800);
             
             return false;
@@ -127,11 +129,14 @@ function match(id){
 
         }
 
-        if(gewonnen.length > 1 && index[id].value == id){
+        if(gewonnen.length > 1 && ids[0] == ids[1]){
             gewonnen.length = 0;
             setTimeout(function () {
-                innerBox[ids[0]].classList.remove('flipped');
+            innerBox[ids[0]].classList.remove('flipped');
             innerBox[ids[1]].classList.remove('flipped');
+            v[ids[0]].value = false;
+            v[ids[1]].value = false;
+            
             }, 800);
             return false;
             
