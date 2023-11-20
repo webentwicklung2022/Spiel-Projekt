@@ -6,18 +6,18 @@ const db  = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'karteikarten'
+    database: 'memory'
 
 })
 
 router.post('/eintragen', (req, res) => {
-    const { Frage, Antwort, Bild } = req.body;
-
+    const { Frage, Antwort, Set_ID } = req.body;
+    			
     // Beispiel für eine SQL-Abfrage zum Einfügen von Daten
-    const sql = 'INSERT INTO karten (Frage, Antwort, Bild) VALUES (?, ?, ?)';
+    const sql = 'INSERT INTO karten (Frage, Antwort, Set_ID) VALUES (?, ?, ?)';
     
     // Führe die SQL-Abfrage aus und übergib die Werte als Parameter
-    db.query(sql, [Frage, Antwort, Bild], (error, results) => {
+    db.query(sql, [Frage, Antwort, Set_ID], (error, results) => {
         if (error) {
             console.error('Fehler beim Einfügen der Daten:', error);
             res.status(500).send('Interner Serverfehler');
