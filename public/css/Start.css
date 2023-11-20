@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: fantasy;
 }
 
 h1{
@@ -15,7 +16,9 @@ body, html {
 }
 
 #Spiele {
+    /*
     background-color: aqua;
+    */
     width: 90vw;
     margin-top: 5%;
     margin-left: 5%;
@@ -30,28 +33,56 @@ body, html {
 
     margin: 1%;
 
-    margin-top: 10%;
+    margin-top: 5%;
 
     border: 1px solid;
 
-    height: 50%;
+    height: 70%;
     width: 30%;
 
-
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
 }
 
-#UeberschriftSpiel1{
 
-}
-
-#UeberschriftSpiel2{
-
-}
-
-#UeberschriftSpiel3{
-
-}
 #CreatedBy{
     position: absolute;
     bottom: 2%;
 }
+
+
+
+.foto {
+    height: 100%;
+    width: 100%;
+    opacity: 0.7;
+    /*overflow: visible;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.SpieleButton:active {
+
+    transform: scale(0.95);
+}
+
+
+
+.TexteDiv{
+    position: absolute;
+    z-index: 100;
+    text-align: center;
+    color: white;
+    height: 100%;
+    width: 100%;
+}
+
+.text{
+    position: absolute;
+    bottom: 2%;
+}
+
