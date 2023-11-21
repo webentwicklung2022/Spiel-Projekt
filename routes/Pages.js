@@ -32,7 +32,10 @@ router.post('/eintragen', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    res.render("index");
+    res.render("Start");
+});
+router.get('/Memory', (req, res) => {
+    res.render("Memory");
 });
 
 router.get('/eintraegeAnzeigen', (req, res) =>{
