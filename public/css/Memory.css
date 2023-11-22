@@ -50,7 +50,7 @@ nav li a:hover {
 
  .Container{
     height: 75vh;
-    width: 80vw;
+    width: 90vw;
     
     margin: 0 auto;
     margin-top: 30px;
@@ -72,6 +72,7 @@ nav li a:hover {
    perspective: 1000px;
    transition-duration: 500ms;
    cursor: pointer;
+   font-size: 15px;
    
  
  }

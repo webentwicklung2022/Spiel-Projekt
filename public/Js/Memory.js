@@ -1,3 +1,38 @@
+var db1= [];
+
+
+async function fetchData() {
+    try {
+      const response = await fetch("http://localhost:5050/abfrage/select%20*%20from%20karten%20where%20Set_ID%20=%20'1'");
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+
+      
+  
+      const data = await response.json();
+      // Hier kannst du mit den geladenen Daten arbeiten
+      db1 = data;
+    } catch (error) {
+      console.error('Fetch error:', error);
+    }
+  }
+  
+  // Aufruf der Funktion
+  fetchData();
+  
+
+
+  
+
+
+setTimeout(function () {
+    console.log(db1[0].Frage);
+    einfuegen();
+}, 100);
+
+
 
 const Container = document.getElementsByClassName("Container");
 var db = [
@@ -16,28 +51,42 @@ var db = [
 
 var fliped;
 var nr = 10;
+var zufälig1 = [0,1,2,3,4,5,6,7,8,9];
+var zufälig2 = [0,1,2,3,4,5,6,7,8,9];
 
+function shuffleArray(array) {
+    // Funktion, die einen zufälligen Wert zwischen -0.5 und 0.5 zurückgibt
+    function randomSort() {
+      return Math.random() - 0.5;
+    }
+  
+    // Das Array mit der Vergleichsfunktion sortieren
+    array.sort(randomSort);
+  }
 
+ 
+  
 
 function einfuegen(){
-      
-    for(var x = 0; x < db.length; x++){
+    shuffleArray(zufälig1)
+    shuffleArray(zufälig2)
+    for(var x = 0; x < db1.length; x++){
         Container[0].innerHTML += `<div class="karten" onclick="flip(${x})">
         <div class="innerBox">
          <div class="vorne"></div>
-         <div class="hinten" >${db[x].Antwort}</div>
+         <div class="hinten" >${db1[zufälig1[x]].Frage}</div>
          <input class="var" type="hidden" value="false">
-         <input class="index" type="hidden" value="${x}">
+         <input class="index" type="hidden" value="${db1[zufälig1[x]].ID}">
         </div>
        </div>`
     }
-    for(var x = 0; x < db.length; x++){
+    for(var x = 0; x < db1.length; x++){
         Container[0].innerHTML += `<div class="karten" onclick="flip(${nr})">
         <div class="innerBox">
          <div class="vorne"></div>
-         <div class="hinten" >${db[x].Begriff}</div>
+         <div class="hinten" >${db1[zufälig2[x]].Antwort}</div>
          <input class="var" type="hidden" value="false">
-         <input class="index" type="hidden" value="${x}">
+         <input class="index" type="hidden" value="${db1[zufälig2[x]].ID}">
         </div>
        </div>`
        nr++
@@ -45,7 +94,7 @@ function einfuegen(){
    
 }
 
-einfuegen();
+
 
 var ids = [];
 var innerBox = document.getElementsByClassName("innerBox");
