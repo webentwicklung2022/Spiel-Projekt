@@ -1,0 +1,171 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+}
+
+h1{
+    color: white;
+}
+
+ #UEBerschrift{
+    /* margin-top: 2%; */
+    color: rgb(0, 0, 0);
+    font-size: 4vh;
+    padding-bottom: 1%;
+    padding-top: 1%;
+    /* text-align: center; */
+    
+} 
+
+nav{
+    background-color: #111111;
+    
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+}
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav li a {
+   
+   text-decoration: none;
+   font-weight: bold;
+   padding: 5px 8px;
+}
+
+nav li a:hover {
+    color: #f7ce00;
+    text-decoration: none;
+ 
+ }
+
+#setTitelErstellen{
+
+    position: relative;
+    background-color: rgb(216, 67, 67);
+
+    height: 20vh;
+    width: 100vw;
+    
+    
+
+
+}
+
+#formDiv{
+
+    background-color: rgb(80, 2, 2);
+    height: 80vh;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 6vh;
+}
+
+.InputTitel{
+
+    width: 30vw;
+    height: 4vh;
+}
+
+.labelTitel{
+
+    font-size: 2.5vh;
+    
+}
+
+input{
+    width: 30vw;
+    height: 4vh;
+}
+#buttonSetErstellen{
+    position: absolute;
+    right: 5vw;
+    top: 6.5vh;
+}
+button{
+
+    height: 6vh;
+    width: 6vw;
+    font-size: 2.5vh;
+}
+#h2Überschriften{
+    position: relative;
+    background-color: #f7ce00;
+}
+#ZweiteÜberschrift1{
+    position: absolute; 
+    display: inline-block;
+    left: 11vw;
+}
+#ZweiteÜberschrift2{
+    position: absolute; 
+    display: inline-block;
+    right: 11vw;
+}
+h2{
+    font-size: 3.5vh;
+}
+
+.datensatzErstellen{
+    width: 100%;
+    height: 11%;
+    position: relative;
+    background-color: #f7ce00;
+}
+
+.InputFrage, .InputAntwort{
+
+    margin-top: 1.5%;
+
+}
+
+.labelFrage, .labelAntwort{
+
+    font-size: 2vh;
+}
+
+.InputFrage, .labelFrage{
+
+}
+
+.InputAntwort, .labelFrage{
+
+}
+
+.Test1{
+    position: absolute;
+    left: 2%;
+    top: 10%;
+}
+.Test2{
+    position: absolute;
+    right: 2%;
+    top: 10%;
+}
+.Test3{
+    position: absolute;
+    bottom: 2%;
+    left: 4%;
+}
+.Test4{
+    position: absolute;
+    bottom: 2%;
+    right: 33%;
+}
