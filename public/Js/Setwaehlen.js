@@ -91,3 +91,6 @@ function MemoryOEffnen("Json mit memory Infos"){
 
 }*/
 
+function goBack() {
+    window.history.back();
+  }

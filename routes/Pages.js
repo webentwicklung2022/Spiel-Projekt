@@ -16,6 +16,7 @@ router.post('/eintragen', (req, res) => {
     // Beispiel für eine SQL-Abfrage zum Einfügen von Daten
     const sql = 'INSERT INTO karten (Frage, Antwort, Set_ID) VALUES (?, ?, ?)';
     
+    
     // Führe die SQL-Abfrage aus und übergib die Werte als Parameter
     db.query(sql, [Frage, Antwort, Set_ID], (error, results) => {
         if (error) {
@@ -45,15 +46,20 @@ router.get('/Setwaehlen', (req, res) => {
     res.render("Setwaehlen");
 });
 
-router.post('/setausgewaehlt', (req, res) => {
-    
-    set = req.body.id;
-   return res.render('Memory', { Set: set });
-
-});
-
 router.get('/Setbearbeiten', (req, res) => {
     res.render("SetBearbeiten");
+});
+
+router.get('/QuizSeterstellen', (req, res) => {
+    res.render("Seterstellen");
+});
+
+
+router.post('/setausgewaehlt', (req, res) => {
+   
+    set = req.body.id;
+   return res.render('Memory', { Set: set });
+ 
 });
 
 

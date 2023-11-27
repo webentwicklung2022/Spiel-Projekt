@@ -179,7 +179,7 @@ p{
     border-radius: 10px;
 } 
 
-#popupÜberschrift{
+.popupÜberschrift{
 
     text-align: center;
     margin-top: 6%;
@@ -237,15 +237,113 @@ p{
 }
 
 
-/*
-        <div class="löschenDiv">
-            <p class="abbrechen">Löschen</p>
-        </div>
-        <div class="abbrechenDiv">
-            <p class="Abbrechen"> Abbrechen</p>
-        </div>
+#PopupArtVomQuiz{
+
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 30vh;
+    width: 70vh;
+    background-color: grey;
+    display: none;
+    /* display: block; */
+    border-radius: 10px;
+
+}
 
 
 
-        display: inline-block;
-*/
+
+#FormDivPopup{
+
+    position: relative;
+
+    height: 30%;
+    /* background-color: #f7ce00; */
+    
+
+    
+}
+
+.form-check{
+    display: inline-block;
+    margin-top: 4%;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+
+.form-check-input {
+    width: 2vw;
+    height: 2vh;
+}
+
+.form-check-label {
+    font-size: 2vw;
+}
+
+.popupÜberschriftText{
+    font-size: 2vw;
+}
+
+
+
+#erstellenOderAbbrechenDiv{
+    /* background-color: chartreuse; */
+    height: 40%;
+
+}
+
+
+#erstellenDiv{
+    
+    position: absolute;
+    left: 8%;
+    top: 60%;
+
+    height: 7vh;
+    width: 12vw;
+    text-align: center;
+    
+    cursor: pointer;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: green solid;
+    background-color: green;
+}
+
+
+#abbrechenDiv2{
+    position: absolute;
+    
+
+    right: 8%;
+    top: 60%;
+    text-align: center;
+    border: red solid;
+    height: 7vh;
+    width: 12vw;
+    background-color: red;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+} 
+
+
+
+
+#abbrechenDiv2:active {
+
+    transform: scale(0.95);
+}
+#erstellenDiv:active {
+
+    transform: scale(0.95);
+}

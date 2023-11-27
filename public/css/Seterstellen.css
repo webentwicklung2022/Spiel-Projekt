@@ -104,6 +104,20 @@ nav li a:hover {
     
 }
 
+#ThemaSet{
+    position: absolute;
+    /*top: 40%;  */
+    top: 8vh;
+    right: 30vw;
+
+}
+#ThemaSetLabel{
+    position: absolute;
+    top: 12.5vh;
+    right: 54vw;
+    /* right: 30vw; */
+}
+
 input{
     width: 30vw;
     height: 4vh;

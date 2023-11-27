@@ -1,5 +1,6 @@
 
 var popup = document.getElementById("Popup");
+var PopupArtVomQuiz = document.getElementById("PopupArtVomQuiz");
 
 
 function Popupoeffnen() {
@@ -16,10 +17,25 @@ function PopupSchliessen() {
 
 }
 
+function PopupArtVomQuizoeffnen() {
+    
+
+  PopupArtVomQuiz.style.display = "block";
+
+}
+
+function PopupArtVomQuizSchliessen() {
+
+
+  PopupArtVomQuiz.style.display = "none";
+
+}
+
+
 
 function WechselZuSeterstellen(){
 
-    window.location.href = "/";
+    window.location.href = "/QuizSeterstellen";
 }
 
 
@@ -102,4 +118,60 @@ function FensterHinzufuegen(Ueberschrift) {
     `;
 
 }
+
+function goBack() {
+    window.history.back();
+  }
+
+
+
+  function seiteOeffnen(){
+
+    var ausgewahltesSpiel = checkRadio();
+
+    switch (ausgewahltesSpiel){
+      case "Memory":
+        window.location.href = "/QuizSeterstellen";
+        break;
+
+      case "Karteikarten":
+        window.location.href = "/";
+        break;
+
+      case "Quiz":
+        window.location.href = "/";
+        break;
+
+    }
+
+  }  
+
+
+
+
+
+  function checkRadio() {
+    var radios = document.getElementsByName('flexRadioDefault');
+    
+    for (var i = 0; i < radios.length; i++) {
+
+        if (radios[i].checked) {
+            var label = document.querySelector('label[for=' + radios[i].id + ']');
+            
+            return label.innerText;
+        }
+    }
+
+    alert("Bitte wähle eine Option aus.");
+}
+
+
+
+
+
+
+
+
+
+
 

@@ -14,7 +14,7 @@
         <h1>Editor</h1>
         <ul>
          
-            <li><a href="/">Zurück</a></li>
+            <li><a href="" onclick="">Zurück</a></li>
             <li><a href="/login">Sets bearbeiten</a></li>
             <li><a href="/register">Startseite</a></li>
      
@@ -130,7 +130,7 @@
 
 
 
-        <div id="hinzufuegen" class="Set" onclick="WechselZuSeterstellen()">
+        <div id="hinzufuegen" class="Set" onclick="PopupArtVomQuizoeffnen()">
 
 
             <div class="SetUeberschrift">
@@ -152,8 +152,8 @@
     <div id="Popup">
 
 
-        <div id="popupÜberschrift">
-            <p>Bist du dir sicher, dass du dieses Set löschen willst?</p>
+        <div class="popupÜberschrift">
+            <p class="popupÜberschriftText">Bist du dir sicher, dass du dieses Set löschen willst?</p>
         </div>
 
         <div id="löschenDiv">
@@ -165,6 +165,70 @@
         </div>
 
     </div>
+
+
+
+
+
+
+        <div id="PopupArtVomQuiz">
+
+
+        <div class="popupÜberschrift">
+            <p class="popupÜberschriftText">Welche Art von Set willst du erstellen?</p>
+        </div>
+
+
+
+
+
+
+        <div id="FormDivPopup">
+
+            <form>
+
+                <div class="form-check">  
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">  
+                <label class="form-check-label" for="flexRadioDefault1">Memory</label>
+                </div>
+    
+    
+                <div class="form-check">  
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >  
+                <label class="form-check-label" for="flexRadioDefault2">Karteikarten</label>
+                </div>
+
+                <div class="form-check">  
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >  
+                <label class="form-check-label" for="flexRadioDefault2">Quiz</label>
+                </div>
+                
+                
+                </form>
+
+
+        </div>
+
+
+
+
+        <div id="erstellenOderAbbrechenDiv">
+
+        <div id="erstellenDiv" onclick="seiteOeffnen()">
+            <p id="erstellen">Erstellen</p>
+        </div>
+
+
+        <div id="abbrechenDiv2" onclick="PopupArtVomQuizSchliessen()">
+            <p id="Abbrechen2"> Abbrechen</p>
+        </div>
+
+
+        </div>
+
+
+
+    </div> 
 
 
 </body>
