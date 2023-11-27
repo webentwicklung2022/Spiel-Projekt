@@ -41,6 +41,12 @@ router.get('/test', (req, res) => {
     res.render("test");
 });
 
+router.get('/Setwaehlen', (req, res) => {
+    res.render("Setwaehlen");
+});
+
+
+
 router.get('/eintraegeAnzeigen', (req, res) =>{
     let ergebnis = ''; 
     db.query('Select * from karten', (error, results) => {

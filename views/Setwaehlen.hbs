@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Start</title>
 
-    <link rel="stylesheet" href="../public/css/Setwaehlen.css">
+    <link rel="stylesheet" href="css/Setwaehlen.css">
 </head>
 
 
@@ -15,20 +15,20 @@
         <h1>Editor</h1>
         <ul>
          
-            <li><a href="/">Zurück</a></li>
+            <li><a href="/Memory">Zurück</a></li>
             <li><a href="/login">Sets bearbeiten</a></li>
-            <li><a href="/register">Startseite</a></li>
+            <li><a href="/">Startseite</a></li>
      
         </ul>
     </nav>
 
-    <h1 id="UEBerschrift">Welches Set möchtest du spielen?</h1>
+    <h1 id="UEBerschrift" >Welches Set möchtest du spielen?</h1>
     <div id="SetsContainer">
 
         
+<!-- 
 
-
-        <div  class="Set">
+        <div  class="Set" onclick="MemoryOEffnen()">
             <div class="SetUeberschrift">
             <p >WiSo Set</p>
         </div>
@@ -45,6 +45,7 @@
             <p >LF5 Set</p>
         </div>
         </div>
+        -->
 
         <!-- Ein Set darf maximal 19 zeichen haben als namen-->
 
@@ -97,7 +98,7 @@
         
     </div>
 
-
+    <script src="Js/Setwaehlen.js"></script>
 </body>
 
 </html>
