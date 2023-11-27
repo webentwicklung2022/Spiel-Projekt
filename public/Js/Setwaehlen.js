@@ -57,10 +57,10 @@ setTimeout(function () {
 function FensterHinzufuegen(Ueberschrift,ID) {
     setsContainer.innerHTML += `
         <div class="Set">
-            <div class="SetUeberschrift" onclick="SendID()">
+            <div class="SetUeberschrift" onclick="SendID(${ID})">
                 <p>${Ueberschrift}</p>
             </div>
-            <form action="/setausgewaehlt" method="post" id ="form_ID">
+            <form action="/setausgewaehlt" method="post" class ="forms">
             <input type="hidden" id="ID" name="id" value="${ID}">
             </form>
         </div>
@@ -72,11 +72,24 @@ function FensterHinzufuegen(Ueberschrift,ID) {
 
 
 
-function SendID(){
-   
-   var form_ID = document.getElementById("form_ID");
+function SendID(ID){
 
-  form_ID.submit()
+
+   var forms = document.getElementsByClassName("forms");
+   
+
+       forms[ID-1].submit();
+    
+        
+    
+        
+    
+  
+   
+   
+
+   
+//   form_ID.submit()
    
 
   
