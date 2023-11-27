@@ -18,6 +18,7 @@ if (!response.ok) {
   const data = await response.json();
   // Hier kannst du mit den geladenen Daten arbeiten
   db1 = data;
+  
 } catch (error) {
   console.error('Fetch error:', error);
 }
@@ -29,15 +30,17 @@ fetchData();
 
 
 setTimeout(function () {
-    console.log("db1: " + db1[0].Name_Set + "         db1.2: " + db1[1].Name_Set);
-    //console.log(db1);
+   
+   
 
     for(var i = 0; i < db1.length; i++){
 
-        FensterHinzufuegen(db1[i].Name_Set);
+        FensterHinzufuegen(db1[i].Name_Set,db1[i].ID);
         
         
     }
+
+    
 
     
 
@@ -50,17 +53,34 @@ setTimeout(function () {
 
 
 
-function FensterHinzufuegen(Ueberschrift) {
+function FensterHinzufuegen(Ueberschrift,ID) {
     setsContainer.innerHTML += `
         <div class="Set">
-            <div class="SetUeberschrift">
+            <div class="SetUeberschrift" onclick="SendID()">
                 <p>${Ueberschrift}</p>
             </div>
+            <form action="/setausgewaehlt" method="post" id ="form_ID">
+            <input type="hidden" id="ID" name="id" value="${ID}">
+            </form>
         </div>
     `;
 
 }
 
+
+
+
+
+function SendID(){
+   
+   var form_ID = document.getElementById("form_ID");
+
+  form_ID.submit()
+   
+
+  
+   
+}
 
 
 

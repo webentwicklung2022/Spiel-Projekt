@@ -1,9 +1,15 @@
 var db1= [];
+var Sets = document.getElementById("Sets");
+var set = "1";
+if(Sets.value !== ""){
+  set = Sets.value;
+}
+
 
 
 async function fetchData() {
     try {
-      const response = await fetch("http://localhost:5050/abfrage/select%20*%20from%20karten%20where%20Set_ID%20=%20'1'");
+      const response = await fetch("http://localhost:5050/abfrage/select%20*%20from%20karten%20where%20Set_ID%20=%20" + set);
   
       if (!response.ok) {
         throw new Error('Network response was not ok');

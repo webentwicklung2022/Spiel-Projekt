@@ -45,6 +45,13 @@ router.get('/Setwaehlen', (req, res) => {
     res.render("Setwaehlen");
 });
 
+router.post('/setausgewaehlt', (req, res) => {
+    
+    set = req.body.id;
+   return res.render('Memory', { Set: set });
+
+});
+
 
 
 router.get('/eintraegeAnzeigen', (req, res) =>{
