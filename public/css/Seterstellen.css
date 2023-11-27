@@ -9,6 +9,9 @@ body, html {
     height: 100vh;
     width: 100vw;
     background-color: aqua;
+    background-color: white;
+    background-color: rgb(148, 148, 148);
+
 }
 
 h1{
@@ -22,6 +25,7 @@ h1{
     padding-bottom: 1%;
     padding-top: 1%;
     /* text-align: center; */
+    margin-left: 2%;
     
 } 
 
@@ -31,7 +35,7 @@ nav{
     padding: 30px 60px;
     display: flex;
     justify-content: space-between;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
 nav ul {
     display: flex;
@@ -60,9 +64,12 @@ nav li a:hover {
 
     position: relative;
     background-color: rgb(216, 67, 67);
+    background-color: white;
+    
 
     height: 20vh;
     width: 100vw;
+    
     
     
 
@@ -72,20 +79,27 @@ nav li a:hover {
 #formDiv{
 
     background-color: rgb(80, 2, 2);
-    height: 80vh;
+    background-color: blueviolet;
+    background-color: rgb(148, 148, 148);
+    height: 80%;
     width: 80vw;
     margin-left: 10vw;
     margin-top: 6vh;
+    padding-bottom: 2%;
+
+
+    
 }
 
 .InputTitel{
 
     width: 30vw;
     height: 4vh;
+    margin-left: 2%;
 }
 
 .labelTitel{
-
+    margin-left: 2%;
     font-size: 2.5vh;
     
 }
@@ -99,25 +113,27 @@ input{
     right: 5vw;
     top: 6.5vh;
 }
-button{
 
-    height: 6vh;
-    width: 6vw;
-    font-size: 2.5vh;
+
+h2{
+
 }
 #h2Überschriften{
     position: relative;
     background-color: #f7ce00;
+    
+    
 }
 #ZweiteÜberschrift1{
     position: absolute; 
     display: inline-block;
-    left: 11vw;
+    left: 23.5vw;
+    
 }
 #ZweiteÜberschrift2{
     position: absolute; 
     display: inline-block;
-    right: 11vw;
+    right: 23.5vw;
 }
 h2{
     font-size: 3.5vh;
@@ -125,9 +141,12 @@ h2{
 
 .datensatzErstellen{
     width: 100%;
-    height: 11%;
+    height: 9vh;
     position: relative;
     background-color: #f7ce00;
+    background-color: white;
+    margin-top: 2%;
+
 }
 
 .InputFrage, .InputAntwort{
@@ -169,3 +188,49 @@ h2{
     bottom: 2%;
     right: 33%;
 }
+
+
+
+
+
+
+  /*
+button{
+
+    height: 6vh;
+    width: 6vw;
+    font-size: 150%;
+                
+
+}*/
+
+
+
+
+button {
+    display: inline-block;
+  
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 0.15em;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #FFFFFF;
+    background-color: #3369ff;
+    box-shadow: inset 0 -0.6em 0 -0.35em rgba(0, 0, 0, 0.17);
+    text-align: center;
+    position: relative;
+    height: 7vh;
+    width:7vw;
+    font-size: 90%;
+    
+  }
+  
+  button:active {
+    top: 0.1em;
+  }
+  
+
+  
