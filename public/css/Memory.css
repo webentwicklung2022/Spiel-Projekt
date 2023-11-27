@@ -149,11 +149,36 @@ nav li a:hover {
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 100;
-    background-color: transparent;
+    z-index: 160;
+    
+    text-align: center;
+
 }
 
 .dnone{
     display: none;
 }
 
+
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+
+#confetti{
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 150;
+}
+
+.b{
+    background-color: #888;
+    height: 45px;
+    width: 120px;
+    outline:  none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
