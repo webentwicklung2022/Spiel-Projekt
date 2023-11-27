@@ -45,6 +45,9 @@ router.get('/Setwaehlen', (req, res) => {
     res.render("Setwaehlen");
 });
 
+router.get('/Setbearbeiten', (req, res) => {
+    res.render("SetBearbeiten");
+});
 
 
 router.get('/eintraegeAnzeigen', (req, res) =>{

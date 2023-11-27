@@ -29,8 +29,7 @@ fetchData();
 
 
 setTimeout(function () {
-    console.log("db1: " + db1[0].Name_Set + "         db1.2: " + db1[1].Name_Set);
-    //console.log(db1);
+
 
     for(var i = 0; i < db1.length; i++){
 
