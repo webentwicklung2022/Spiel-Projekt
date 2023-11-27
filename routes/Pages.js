@@ -52,6 +52,9 @@ router.post('/setausgewaehlt', (req, res) => {
 
 });
 
+router.get('/Setbearbeiten', (req, res) => {
+    res.render("SetBearbeiten");
+});
 
 
 router.get('/eintraegeAnzeigen', (req, res) =>{
