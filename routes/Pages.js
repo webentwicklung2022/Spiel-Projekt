@@ -134,9 +134,79 @@ router.get('/abfrage/:befehl', (req, res) => {
 
 
 
+router.post('/MemorySetErstellen', (req, res) => {
+    const { setID, NameSet, ThemaSet, 
+            Frage, Antwort,
+            Frage1, Antwort1,
+            Frage2, Antwort2,
+            Frage3, Antwort3,
+            Frage4, Antwort4,
+            Frage5, Antwort5,
+            Frage6, Antwort6,
+            Frage7, Antwort7,
+            Frage8, Antwort8,
+            Frage9, Antwort9,} = req.body;
+
+    const sql1 = `INSERT INTO sets (ID, Name_Set, LernThema ) VALUES (${setID}, ${NameSet}, ${ThemaSet})`;
+    const sql2 =  `INSERT INTO karten (Frage, Antwort, Set_ID) VALUES 
+    ('${Frage}', '${Antwort}', ${setID}),
+    ('${Frage1}', '${Antwort1}', ${setID}),
+    ('${Frage2}', '${Antwort2}', ${setID}),
+    ('${Frage3}', '${Antwort3}', ${setID}),
+    ('${Frage4}', '${Antwort4}', ${setID}),
+    ('${Frage5}', '${Antwort5}', ${setID}),
+    ('${Frage6}', '${Antwort6}', ${setID}),
+    ('${Frage7}', '${Antwort7}', ${setID}),
+    ('${Frage8}', '${Antwort8}', ${setID}),
+    ('${Frage9}', '${Antwort9}', ${setID})`;
+  
+    
+   
+    
+    
+
+    db.query(sql1, (error, results) => {
+        if (error) {
+            console.error('Fehler beim Einfügen der Daten:', error);
+            res.status(500).send('Interner Serverfehler');
+            return;
+        }
+
+        console.log('Daten erfolgreich eingefügt:', results);
+        
+        
+    });
+
+    setTimeout(function () {
+        db.query(sql2, (error, results) => {
+            if (error) {
+                console.error('Fehler beim Einfügen der Daten:', error);
+                res.status(500).send('Interner Serverfehler');
+                return;
+            }
+    
+            console.log('Daten erfolgreich eingefügt:', results);
+            res.render('Setwaehlen');
+            
+        });
+
+    }, 500);
+
+
+   
+   
+    
+});
+
+
+
+
+
+
 
 
 module.exports = router;
+
 
 
 
