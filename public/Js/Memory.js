@@ -127,10 +127,12 @@ function flip(id) {
 
   if (fliped == "false") {
     innerBox[id].classList.add('flipped');
+    flipSound();
     v[id].value = true;
   } else {
     innerBox[id].classList.remove('flipped');
     v[id].value = false;
+    flipSound();
     tMoeglich();
   }
 
@@ -163,9 +165,11 @@ function match(id) {
     tNichtMoeglich()
     innerBox[ids[0]].classList.add('still');
     innerBox[ids[1]].classList.add('still');
+    
     setTimeout(function () {
       karten[ids[0]].classList.add('richtig');
       karten[ids[1]].classList.add('richtig');
+      successSound();
       richtigAnzahl++;
       tMoeglich();
       gewonnenEffikt();
@@ -249,14 +253,19 @@ if(richtigAnzahl === 10){
 document.getElementById("confetti").style.display = "block";
 cover[0].innerHTML = `<h1>Glückwunsch Sie haben gewonnen!</h1>
 <h1>Möchten Sie Nochmal Spielen ?</h1>
-<button class="b" onclick="aktu()">Nochmal</button>`
+<button class="b" onclick="aktu()">Nochmal</button> <button class="bz" onclick="Zurueck()">Zurück</button>`
+cover[0].style.backgroundColor = "#1111113f";
 cover[0].classList.remove('dnone');
+winSound();
 }
 }
 
 
 function aktu(){
   location.reload();
+}
+function Zurueck() {
+  history.back();
 }
 
 
@@ -659,3 +668,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 }
 
+
+function flipSound(){
+  var audio = document.getElementById('audio');
+  audio.src = "/audio/flip.mp3";
+  audio.play();
+}
+function successSound(){
+  var audio = document.getElementById('audio');
+  audio.src = "/audio/success.mp3";
+  audio.play();
+}
+function winSound(){
+  var audio = document.getElementById('audio');
+  audio.src = "/audio/win.mp3";
+  audio.play();
+}

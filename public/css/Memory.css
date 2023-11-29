@@ -150,7 +150,9 @@ nav li a:hover {
     height: 100%;
     width: 100%;
     z-index: 160;
-    
+   
+    left: 0;
+    top: 0;
     text-align: center;
 
 }
@@ -174,11 +176,34 @@ nav li a:hover {
 }
 
 .b{
-    background-color: #888;
+    background-color: #43d4a0;
     height: 45px;
     width: 120px;
     outline:  none;
     border: none;
     border-radius: 5px;
     font-weight: bold;
+    transition-duration: 200ms;
+}
+
+.b:hover{
+    filter: brightness(2);
+     letter-spacing: 1px;
+    
+}
+
+.bz{
+    background-color: #d44373;
+    height: 45px;
+    width: 120px;
+    outline:  none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition-duration: 200ms;
+}
+
+.bz:hover{
+    filter: brightness(2);
+    letter-spacing: 1px;
 }
