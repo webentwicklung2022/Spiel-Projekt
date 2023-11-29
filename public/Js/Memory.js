@@ -158,6 +158,7 @@ function match(id) {
 
   
   var index = document.getElementsByClassName("index");
+  
 
   gewonnen.push(index[id].value)
   if (gewonnen[0] === gewonnen[1] && gewonnen.length == 2 && ids[0] !== ids[1]) {
@@ -183,15 +184,24 @@ function match(id) {
   if (gewonnen.length == 2 && gewonnen[0] !== gewonnen[1]) {
     
     gewonnen.length = 0;
-    tNichtMoeglich()
+    tNichtMoeglich();
+    
+  
     setTimeout(function () {
-      
+      innerBox[ids[0]].classList.add('falsch');
+      innerBox[ids[1]].classList.add('falsch');
       innerBox[ids[0]].classList.remove('flipped');
       innerBox[ids[1]].classList.remove('flipped');
       v[ids[0]].value = false;
       v[ids[1]].value = false;
+      setTimeout(function () {
+        innerBox[ids[0]].classList.remove('falsch');
+        innerBox[ids[1]].classList.remove('falsch');
+      }, 400);
+      wrongSound();
       tMoeglich();
     }, 800);
+    
     
    
     return false;
@@ -672,15 +682,25 @@ document.addEventListener("DOMContentLoaded", function() {
 function flipSound(){
   var audio = document.getElementById('audio');
   audio.src = "/audio/flip.mp3";
+  audio.volume = 0.2;
   audio.play();
 }
 function successSound(){
   var audio = document.getElementById('audio');
   audio.src = "/audio/success.mp3";
+  audio.volume = 0.4;
   audio.play();
 }
 function winSound(){
   var audio = document.getElementById('audio');
   audio.src = "/audio/win.mp3";
+  audio.volume = 0.5;
+  audio.play();
+}
+
+function wrongSound(){
+  var audio = document.getElementById('audio');
+  audio.src = "/audio/wrong.mp3";
+  audio.volume = 0.1;
   audio.play();
 }

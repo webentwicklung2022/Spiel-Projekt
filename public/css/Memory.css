@@ -150,7 +150,6 @@ nav li a:hover {
     height: 100%;
     width: 100%;
     z-index: 160;
-   
     left: 0;
     top: 0;
     text-align: center;
@@ -206,4 +205,9 @@ nav li a:hover {
 .bz:hover{
     filter: brightness(2);
     letter-spacing: 1px;
+}
+
+.falsch{
+    box-shadow:  0 0 5px 5px rgb(255, 71, 47);
+    
 }
