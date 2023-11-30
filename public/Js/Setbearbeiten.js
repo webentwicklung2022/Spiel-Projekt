@@ -210,7 +210,12 @@ function loeschen(){
   console.log("2. ausgewähltesSet: " + ausgewähltesSet); // <-- dass klappt (Variable wird immer geändert)
 
   console.log("ApiLink: " + apiZusammenbauen(ausgewähltesSet));
+
   fetchData2(apiZusammenbauen(ausgewähltesSet));
+
+  PopupSchliessen();
+  window.location.reload();
+
 }
 
 

@@ -82,7 +82,9 @@ function checkFull(){
 
  function formSubmit(){
 
-    window.alert("alles klappt");
+    // window.alert("alles klappt");
     FormMemorySeterstellen.submit();
 
+
+    
  }

@@ -214,7 +214,7 @@ router.post('/MemorySetErstellen', (req, res) => {
             }
     
             console.log('Daten erfolgreich eingefügt:', results);
-            res.render('Setwaehlen');
+            res.redirect('/Setwaehlen');
             
         });
 
