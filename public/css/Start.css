@@ -106,3 +106,38 @@ h1{
 .SpieleButton:hover{
     scale: 1.1;
 }
+.cover2{
+    top: 0;
+    bottom: 0;
+   position: absolute; 
+   background-color: rgba(255, 255, 255, 0.668);
+   height: 100%;
+   width: 100%;
+   z-index: 150;
+   padding-top: 40%;
+   font-size: 30px;
+   opacity: 0;
+   transition-duration: 400ms;
+}
+.cover3{
+    top: 0;
+    bottom: 0;
+   position: absolute; 
+   background-color: rgba(255, 255, 255, 0.668);
+   height: 100%;
+   width: 100%;
+   z-index: 150;
+   padding-top: 40%;
+   font-size: 30px;
+   opacity: 0;
+   transition-duration: 400ms;
+}
+
+
+#Spiel2{
+position: relative;
+}
+
+#Spiel3{
+    position: relative;
+}
