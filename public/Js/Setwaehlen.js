@@ -2,11 +2,66 @@
 /*document.getElementsByClassName*/
 
 var db1= [];
+var db2= [];
+var SetIDs;
 var setsContainer = document.getElementById("SetsContainer");
+
+
 
 async function fetchData() {
     try {
-const response = await fetch("http://localhost:5050/abfrage/select%20*%20from%20sets");
+const response = await fetch("http://localhost:5050/abfrage/select%20SetID%20from%20spiele%20where%20Memory%20=%20'1'");
+
+
+if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+
+  
+
+  const data2 = await response.json();
+  // Hier kannst du mit den geladenen Daten arbeiten
+  db2 = data2;
+  console.log("data2: " + data2[0].SetID);
+  
+} catch (error) {
+  console.error('Fetch error:', error);
+}
+}
+
+
+fetchData();
+
+setTimeout(function () {
+
+    SetIDs = "";
+    SetIDs += "in("
+   
+   for(var x = 0; x < db2.length; x++){
+
+    SetIDs += db2[x].SetID;
+    if(x < db2.length -1){
+        SetIDs += ", ";
+    }
+    
+
+    // "in(1, 2, 3, 4, 5)"
+   }
+
+    // console.log("db2: " + db2[0].SetID);
+    SetIDs += ")"
+
+    console.log(SetIDs);
+    
+    
+
+}, 100);
+
+
+
+async function fetchData2() {
+    try {
+const response = await fetch(`http://localhost:5050/abfrage/select%20*%20from%20sets%20Where%20ID%20${SetIDs}`);
 
 
 if (!response.ok) {
@@ -18,6 +73,9 @@ if (!response.ok) {
   const data = await response.json();
   // Hier kannst du mit den geladenen Daten arbeiten
   db1 = data;
+
+  console.log("fetchData2 data.length: " + data.length);
+  console.log("fetchData2 db1: " + db1);
   
 } catch (error) {
   console.error('Fetch error:', error);
@@ -25,27 +83,26 @@ if (!response.ok) {
 }
 
 
-fetchData();
-
-
+setTimeout(function () {
+fetchData2();
+}, 300);
 
 setTimeout(function () {
    
    
-
+    console.log("db1.lenth: " + db1.length);
+    console.log("db1[1]: " + db1[1]);
 
     for(var i = 0; i < db1.length; i++){
 
-        FensterHinzufuegen(db1[i].Name_Set,db1[i].ID);
-        
+        FensterHinzufuegen(db1[i].Name_Set,db1[i].ID);  
         
     }
+    console.log("db1: " + db1);
 
-    
+}, 400);
 
-    
 
-}, 100);
 
 
 
@@ -74,25 +131,15 @@ function FensterHinzufuegen(Ueberschrift,ID) {
 
 function SendID(ID){
 
-
    var forms = document.getElementsByClassName("forms");
    
 
        forms[ID-1].submit();
     
-        
-    
-        
-    
-  
-   
-   
-
    
 //   form_ID.submit()
    
 
-  
    
 }
 
