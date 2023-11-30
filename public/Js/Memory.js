@@ -258,7 +258,7 @@ function tNichtMoeglich(){
 
 function gewonnenEffikt(){
   cover =  document.getElementsByClassName("cover");
-if(richtigAnzahl === 1){
+if(richtigAnzahl === 10){
   
 document.getElementById("confetti").style.display = "block";
 timerend();
@@ -266,7 +266,7 @@ recordberechnen();
 cover[0].innerHTML = `<h1>Glückwunsch Sie haben gewonnen!</h1>
 <h1>Dein Record ist:
 
-${record} Sekunden</h1>
+${record}</h1>
 <h1>Möchten Sie Nochmal Spielen ?</h1>
 <button class="b" onclick="aktu()">Nochmal</button> <button class="bz" onclick="Zurueck()">Zurück</button>`
 cover[0].style.backgroundColor = "#1111113f";
@@ -685,28 +685,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function flipSound(){
-  var audio = document.getElementById('audio');
+  var audio = document.getElementById('audio1');
   audio.src = "/audio/flip.mp3";
   audio.volume = 0.2;
   audio.play();
 }
 function successSound(){
-  var audio = document.getElementById('audio');
+  var audio = document.getElementById('audio2');
   audio.src = "/audio/success.mp3";
   audio.volume = 0.4;
   audio.play();
 }
 function winSound(){
-  var audio = document.getElementById('audio');
+  var audio = document.getElementById('audio3');
   audio.src = "/audio/win.mp3";
   audio.volume = 0.5;
   audio.play();
 }
 
 function wrongSound(){
-  var audio = document.getElementById('audio');
+  var audio = document.getElementById('audio4');
   audio.src = "/audio/wrong.mp3";
-  audio.volume = 0.1;
+  audio.volume = 0.01;
   audio.play();
 }
 var startTime;
@@ -724,5 +724,10 @@ function timerend(){
 function recordberechnen(){
   record = endTime - startTime;
   record = Math.floor(record / 1000);
-  console.log(record);
+  if(record >= 60){
+    record= Math.floor(record / 60) + " Minuten und " + record % 60 + " Sekunden";
+  }else{
+    record += " Sekunden" ;
+  }
+  
 }
