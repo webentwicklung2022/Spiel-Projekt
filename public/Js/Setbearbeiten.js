@@ -1,13 +1,21 @@
 
 var popup = document.getElementById("Popup");
 var PopupArtVomQuiz = document.getElementById("PopupArtVomQuiz");
+var ausgewähltesSet;
 
+
+function testfunktion(Ueberschrift){
+
+  ausgewähltesSet = Ueberschrift;// <-- Das klappt
+  console.log("ausgewähltesSet: " + ausgewähltesSet);
+
+}
 
 function Popupoeffnen() {
     
 
         popup.style.display = "block";
-
+        
 }
 
 function PopupSchliessen() {
@@ -93,7 +101,7 @@ setTimeout(function () {
 function FensterHinzufuegen(Ueberschrift) {
     setsContainer.innerHTML += `<div  class="Set">
 
-    <div class="loeschen" onclick="Popupoeffnen()">
+    <div class="loeschen" onclick="Popupoeffnen(); testfunktion('${Ueberschrift}');">
     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
         <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5m-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5M4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5"/>
       </svg>
@@ -164,6 +172,93 @@ function goBack() {
 
     alert("Bitte wähle eine Option aus.");
 }
+
+
+
+
+
+
+
+
+
+//////////////////////////////////////
+//////////////////////////////////////
+//////////////////////////////////////
+
+
+
+
+// Beispiel lin um das Set "testset" zu löschen: "http://localhost:5050/abfrage/DELETE%20FROM%20sets%20WHERE%20Name_Set%20=%20'testset';"
+
+
+function apiZusammenbauen(ausgewähltesElement){
+
+  var apiTeil1 = "http://localhost:5050/abfrage/DELETE%20FROM%20sets%20WHERE%20Name_Set%20=%20'"
+
+  var apiTeil2 = "';"
+
+  var vollständigeApi = apiTeil1 + ausgewähltesElement + apiTeil2 ;
+
+  return vollständigeApi;
+} 
+
+
+function loeschen(){
+  
+  
+  
+  console.log("2. ausgewähltesSet: " + ausgewähltesSet); // <-- dass klappt (Variable wird immer geändert)
+
+  console.log("ApiLink: " + apiZusammenbauen(ausgewähltesSet));
+  fetchData2(apiZusammenbauen(ausgewähltesSet));
+}
+
+
+
+
+
+
+
+async function fetchData2(apiLink) {
+  try {
+    const response = await fetch(apiLink, {
+      method: 'GET', // Setze die Methode auf DELETE
+      headers: {
+        'Content-Type': 'application/json', // Setze den Header auf JSON, falls erforderlich
+      },
+    });
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+
+    // Hier kannst du mit den Daten arbeiten, wenn nötig
+    const data = await response.json();
+    console.log('Response Data:', data);
+  } catch (error) {
+    console.error('Fetch error:', error);
+  }
+}
+
+
+
+// async function fetchData2() {  // in dieser Funktion ist ein Fehler
+//   try {
+// const response = await fetch();
+
+
+// if (!response.ok) {
+//   throw new Error('Network response was not ok');
+// }
+
+
+// } catch (error) {
+// console.error('Fetch error:', error);
+// }
+// }
+
+
+
 
 
 
