@@ -4,7 +4,7 @@ var set = "1";
 if (Sets.value !== "") {
   set = Sets.value;
 }
-
+timerStart();
 
 
 async function fetchData() {
@@ -258,10 +258,14 @@ function tNichtMoeglich(){
 
 function gewonnenEffikt(){
   cover =  document.getElementsByClassName("cover");
-if(richtigAnzahl === 10){
+if(richtigAnzahl === 1){
   
 document.getElementById("confetti").style.display = "block";
+timerend();
+recordberechnen();
 cover[0].innerHTML = `<h1>Glückwunsch Sie haben gewonnen!</h1>
+<h1>DeincRecord ist: 
+${record}</h1>
 <h1>Möchten Sie Nochmal Spielen ?</h1>
 <button class="b" onclick="aktu()">Nochmal</button> <button class="bz" onclick="Zurueck()">Zurück</button>`
 cover[0].style.backgroundColor = "#1111113f";
@@ -703,4 +707,21 @@ function wrongSound(){
   audio.src = "/audio/wrong.mp3";
   audio.volume = 0.1;
   audio.play();
+}
+var startTime;
+var endTime;
+var record = 0;
+
+function timerStart(){
+   startTime = new Date().getTime();
+}
+
+function timerend(){
+   endTime = new Date().getTime();
+}
+
+function recordberechnen(){
+  record = endTime - startTime;
+  record = Math.floor(record / 1000);
+  console.log(record);
 }
