@@ -264,8 +264,9 @@ document.getElementById("confetti").style.display = "block";
 timerend();
 recordberechnen();
 cover[0].innerHTML = `<h1>Glückwunsch Sie haben gewonnen!</h1>
-<h1>DeincRecord ist: 
-${record}</h1>
+<h1>Dein Record ist:
+
+${record} Sekunden</h1>
 <h1>Möchten Sie Nochmal Spielen ?</h1>
 <button class="b" onclick="aktu()">Nochmal</button> <button class="bz" onclick="Zurueck()">Zurück</button>`
 cover[0].style.backgroundColor = "#1111113f";
