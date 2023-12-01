@@ -132,6 +132,24 @@ router.get('/abfrage/:befehl', (req, res) => {
     }
 });
 
+router.post('/delete', async (req, res) => {
+    try {
+        // Achtung vor SQL-Injection! Verwende Parameterisierte Abfragen.
+        const befehl = req.body.befehl;
+        console.log('Ausgeführter Befehl:', befehl);
+
+        // Hier sollte db.query sicher implementiert sein (abhängig von deinem Datenbankmodul).
+        const results = await db.query(befehl);
+
+        console.log('Daten erfolgreich gelöscht:', results);
+        // Sende die Ergebnisse als JSON.
+        res.redirect('/Setbearbeiten');
+    } catch (error) {
+        console.error('Fehler beim Abfragen der Daten:', error);
+        res.status(500).json({ error: 'Interner Serverfehler' });
+    }
+});
+
 
 
 router.post('/MemorySetErstellen', (req, res) => {
