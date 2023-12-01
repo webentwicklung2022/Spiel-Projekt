@@ -280,7 +280,7 @@ function aktu(){
   location.reload();
 }
 function Zurueck() {
-  history.back();
+  location.href = "/"
 }
 
 
@@ -687,19 +687,19 @@ document.addEventListener("DOMContentLoaded", function() {
 function flipSound(){
   var audio = document.getElementById('audio1');
   audio.src = "/audio/flip.mp3";
-  audio.volume = 0.2;
+  audio.volume = 0.03;
   audio.play();
 }
 function successSound(){
   var audio = document.getElementById('audio2');
   audio.src = "/audio/success.mp3";
-  audio.volume = 0.4;
+  audio.volume = 0.2;
   audio.play();
 }
 function winSound(){
   var audio = document.getElementById('audio3');
   audio.src = "/audio/win.mp3";
-  audio.volume = 0.5;
+  audio.volume = 0.1;
   audio.play();
 }
 
