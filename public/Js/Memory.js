@@ -34,9 +34,9 @@ fetchData();
 
 
 setTimeout(function () {
-  console.log(db1[0].Frage);
+  
   einfuegen();
-}, 100);
+}, 200);
 
 
 
