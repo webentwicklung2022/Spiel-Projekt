@@ -9,6 +9,8 @@ body, html {
     height: 100%;
     width: 100%;
     background-color: aqua;
+    overflow: hidden;
+    font-family: Arial;
 }
 
 h1{
@@ -45,6 +47,7 @@ nav li a {
    text-decoration: none;
    font-weight: bold;
    padding: 5px 8px;
+   color: #ffffff;
 }
 
 nav li a:hover {

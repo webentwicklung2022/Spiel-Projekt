@@ -11,6 +11,8 @@ body, html {
     background-color: aqua;
     background-color: white;
     background-color: rgb(148, 148, 148);
+    
+    overflow: hidden;
 
 }
 
@@ -52,6 +54,7 @@ nav li a {
    text-decoration: none;
    font-weight: bold;
    padding: 5px 8px;
+   color: #fff;
 }
 
 nav li a:hover {

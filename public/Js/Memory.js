@@ -731,3 +731,17 @@ function recordberechnen(){
   }
   
 }
+
+
+
+
+
+setTimeout(function () {
+ 
+ var cover = document.getElementsByClassName("cover2");
+  cover[0].style.opacity = "0";
+
+  setTimeout(function () {
+      cover[0].style.display = "none";
+  }, 600);
+}, 600);

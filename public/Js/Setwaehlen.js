@@ -154,3 +154,16 @@ function MemoryOEffnen("Json mit memory Infos"){
 function goBack() {
     window.history.back();
   }
+
+
+
+  setTimeout(function () {
+   
+   var cover = document.getElementsByClassName("cover");
+    cover[0].style.opacity = "0";
+
+    setTimeout(function () {
+        cover[0].style.display = "none";
+    }, 600);
+}, 600);
+
